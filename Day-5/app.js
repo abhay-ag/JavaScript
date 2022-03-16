@@ -56,3 +56,28 @@ let avgSeries = (arr)=>{
 let avg = avgSeries([1,2,3,4,5,6,7,8,9,10])
 
 console.log(avg);
+
+// ## DOUBT ## //
+// console.log("###################");
+// // Program 11
+
+// let fib = (n) =>{
+//     let series = "0,";
+//     let sum = 0;
+//     let firstNum = 0;
+//     let secondNum = 1;
+//     for (let i = 0;i < n;i++ ){
+//         sum = firstNum + secondNum;
+//         series += sum + ","
+//         firstNum = secondNum
+//         secondNum = sum
+
+//     }
+//     console.log(series);
+// }
+
+// fib(10)
+
+/* Arrow function is great for single line return 
+    It doesn't create a new scope
+*/
