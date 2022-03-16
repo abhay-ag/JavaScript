@@ -81,3 +81,16 @@ console.log(avg);
 /* Arrow function is great for single line return 
     It doesn't create a new scope
 */
+
+// OPERATORS
+
+/**
+    pre increment updates realtime value hence the console.log(++a) will print 3.
+    post increment updates the value after it has been called.
+ */
+
+var a = 2
+var b = 5
+console.log(a);
+console.log(a++);
+console.log(a);
