@@ -22,12 +22,16 @@
     These objects help us to bundle these propertiesor attributes into a single entity
 */
 
+/**
+    Here , all the properties and functions are coupled in a single variable, called mob
+    This mob variable is called as an object
+*/
 // Using Object
-// We dont need to specifically use strings for the object names.
+// We dont need to specifically use strings for the object variable names.
 let mob = {
     make : "Apple",
     model: "11 Pro",
-    price: "69000",
+    price: 69000,
     wireless_charging:()=>{
         console.log(mob["make"] + " " +mob["model"]+ " supports wireless charging.")
     }
