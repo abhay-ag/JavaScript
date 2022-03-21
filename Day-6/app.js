@@ -17,6 +17,9 @@
     In that situation we have to use the same properties again and again for 100 different mobiles.
     and we can copy and paste the same piece of code repeatedly and we have to change the values of these 
     properties every time for our particular mobile. So this is the inefficient way to tackle such kind of problems
+
+    Here the concept of objecgt comes into the picture.
+    These objects help us to bundle these propertiesor attributes into a single entity
 */
 
 // Using Object
