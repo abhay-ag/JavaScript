@@ -29,7 +29,7 @@ let mob = {
     "model": "11 Pro",
     "price": "69000",
     "wireless_charging":()=>{
-        document.write(mob["make"] + " " +mob["model"]+ " supports wireless charging.")
+        console.log(mob["make"] + " " +mob["model"]+ " supports wireless charging.")
     }
 }
 
