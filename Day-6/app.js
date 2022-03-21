@@ -23,12 +23,12 @@
 */
 
 // Using Object
-
+// We dont need to specifically use strings for the object names.
 let mob = {
-    "make" : "Apple",
-    "model": "11 Pro",
-    "price": "69000",
-    "wireless_charging":()=>{
+    make : "Apple",
+    model: "11 Pro",
+    price: "69000",
+    wireless_charging:()=>{
         console.log(mob["make"] + " " +mob["model"]+ " supports wireless charging.")
     }
 }
