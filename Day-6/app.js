@@ -33,8 +33,30 @@ let mob = {
     model: "11 Pro",
     price: 69000,
     wireless_charging:()=>{
-        console.log(mob["make"] + " " +mob["model"]+ " supports wireless charging.")
+        console.log(mob.make + " " +mob.model+ " supports wireless charging.")
     }
 }
-
+console.log(mob);
 mob.wireless_charging()
+
+/*
+    'this' keyword is reserved keyword in all object oriented programming.
+*/
+
+// This example
+
+var myVar = 100;
+
+function whoIsThis(){
+    var myVar = 200;
+
+    console.log(myVar);
+    console.log(this.myVar);
+}
+
+whoIsThis()
+
+// new keyword allocates a new memory space to anything in order to store the values against their properties and functions
+
+var obj = new whoIsThis(); //
+console.log(obj.myVar);
