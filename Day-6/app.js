@@ -65,3 +65,22 @@ console.log(obj.myVar);
 /**
     if a function that includes this keyword, then it is called from the global scope then this will point to the window object
  */
+
+// Accesing this inside a object method
+
+/*
+    Global value can be changed using a local function
+*/
+var myTar = 100;
+
+function hello(){
+    this.myTar = 200;
+}
+
+var ob1 = new hello();
+
+var ob2 = new hello();
+ob2.myTar = 300;
+
+console.log(ob1.myTar);
+console.log(ob2.myTar);
