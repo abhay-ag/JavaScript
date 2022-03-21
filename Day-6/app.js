@@ -60,3 +60,8 @@ whoIsThis()
 
 var obj = new whoIsThis(); //
 console.log(obj.myVar);
+
+// 1. this in Global Scope
+/**
+    if a function that includes this keyword, then it is called from the global scope then this will point to the window object
+ */
