@@ -15,3 +15,17 @@
 
     finds all the function blocks in the given code and moves them to the topmost position. [Readjusts the code]
 */
+
+/* 
+    Only the Declarations are hoisted
+
+    eg:
+        console.log(num) // Results in undefined
+        var num;    // Declaration ---> Moved to the top
+        num = 6;    // Initialization
+
+
+    eg:
+        console.log(num)
+        num = 6;    //Throws a ReferenceError exception
+*/
