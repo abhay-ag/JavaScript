@@ -22,6 +22,7 @@
     eg:
         console.log(num) // Results in undefined
         var num;    // Declaration ---> Moved to the top
+        var num = 6;// This will also be moved to top
         num = 6;    // Initialization
 
 
