@@ -33,4 +33,19 @@
 
 /* 
     IF FUNCTION IS DECLARED USING AN EXPRESSION THEN IT WILL NOT BE HOISTED  // Throws an TypeError exception
+    ARROW FUNCTIONS ALSO AREN'T HOISTED //Throws a ReferenceError
+    IF A FUNCTION IS WRITTEN WITHIN PARENTHESIS THEN ALSO IT WILL NOT BE HOISTED // Throws a ReferenceError
 */
+
+sum(4,5);          // Outputs TypeError exception
+
+console.log(sum);  // Outputs Undefined
+var sum = function(a,b){
+    console.log(a+b);
+}                  
+
+var func = function(a,b){
+    res = a+b
+    console.log(res);
+}
+console.log(func); // Outputs the function definition
