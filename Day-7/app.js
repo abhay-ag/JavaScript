@@ -71,3 +71,12 @@ function c(){
 }
 
 a()
+
+/* 
+    Output
+
+        Hello
+        B-Tech-CSE
+        Group 02
+        Students
+*/
