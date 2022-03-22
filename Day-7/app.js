@@ -80,3 +80,14 @@ a()
         Group 02
         Students
 */
+
+/* 
+    STACK Method ==> LAST IN FIRST OUT
+    Explanation of output
+
+    1) function a is moved to the calling stack and remains there untill and unless all the tasks of a aren't executed
+    2) at line 3 of a function b is moved to calling stack      [function a still pending]
+    3) last line of b function c is moved to the calling stack  [function b still pending]
+    4) execution of c completes and c is removed (Control goes to b)                [function b completed and removed from stack]
+    5) (control goes to a) a is completely executed and removed from stack
+*/
