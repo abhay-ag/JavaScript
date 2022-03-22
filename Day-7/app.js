@@ -40,7 +40,7 @@
     INITIALIZATIONS USING LET AND CONST ARE NOT HOISTED
 */
 
-sum(4,5);          // Outputs TypeError exception
+// sum(4,5);          // Outputs TypeError exception
 
 console.log(sum);  // Outputs Undefined
 var sum = function(a,b){
@@ -52,3 +52,22 @@ var func = function(a,b){
     console.log(res);
 }
 console.log(func); // Outputs the function definition
+
+// ____________________ //
+var gb = "window"
+function a(){
+    var local1 = "Hello"
+    console.log(local1);
+    b();
+    console.log("Students");
+}
+function b(){
+    console.log("B-Tech-CSE");
+    c();
+}
+
+function c(){
+    console.log("Group 02");
+}
+
+a()
