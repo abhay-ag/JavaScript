@@ -30,3 +30,7 @@
         console.log(num)
         num = 6;    //Throws a ReferenceError exception
 */
+
+/* 
+    IF FUNCTION IS DECLARED USING AN EXPRESSION THEN IT WILL NOT BE HOISTED
+*/
