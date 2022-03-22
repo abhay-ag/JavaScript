@@ -1,6 +1,6 @@
 // With using objects
 
-let student = [
+let students = [
     {
         name : "Abhay Aggarwal",
         rno : 2110990034,
@@ -26,7 +26,7 @@ let student = [
         }
     }
 ]
-console.log(student);
+console.log(students);
 
 // Without using objects
 
