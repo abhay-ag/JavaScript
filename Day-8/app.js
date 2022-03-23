@@ -33,3 +33,17 @@ whoAmI()
         undefined
         Computer
  */
+
+
+// SCOPE CHAIN
+
+var data1 = "Hello Students"
+function first(){
+    var data2 = "How are you?"
+    second();
+    function second(){
+        var data3 = "Let's Understand scope chain"
+        console.log(data1+ " " + data2 + " " + data3);
+    }
+}
+first();
