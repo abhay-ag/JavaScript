@@ -102,6 +102,6 @@ function sum2(){
     "use strict"
     var res = 10+30
     console.log(res);
-    console.log(this);
+    console.log(this);          // Will print undefined as STRICT MODE is Enabled
 }
 sum2();
