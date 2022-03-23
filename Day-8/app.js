@@ -47,3 +47,5 @@ function first(){
     }
 }
 first();
+
+//Child function can access the global variable and variables of its parent function but this is not true vice-versa
