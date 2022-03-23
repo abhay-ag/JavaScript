@@ -87,6 +87,8 @@ students.sum();
     More About This
         1. In the illustration above this keyword refers to the owner object that is students. Therefore it will display
         the student object.
+        2. In a Regular function like the illustration below this keyword will refer to the global object that is window object
+        3. In a function in STRICT MODE thi keyword will refer as UNDEFINED.
 */
 
 function sum1(){
