@@ -67,3 +67,31 @@ function three(){
     // console.log(data1+ " " + data2 + " " + data3 + " " + data4);        // This line of code will show error as data2 and data3 are local variables of first() and second();
 }
 first()
+
+
+// More about OBJECTS
+
+const students = {
+    name: "Raman",
+    class : "B-Tech-CSE",
+    sum : function(){
+        var res = 10+30
+        console.log(res);
+        console.log(this);      // this refers to the current object it is declared in
+    }
+}
+
+students.sum();
+
+/*
+    More About This
+        1. In the illustration above this keyword refers to the owner object that is students. Therefore it will display
+        the student object.
+*/
+
+function sum1(){
+    var res = 10+30
+    console.log(res);
+    console.log(this);          //Declared in global scope so refers to the window object
+}
+sum1()
