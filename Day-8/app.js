@@ -105,3 +105,22 @@ function sum2(){
     console.log(this);          // Will print undefined as STRICT MODE is Enabled
 }
 sum2();
+
+const student = {
+    name : "Raman", 
+    class: "B-Tech-CSE",
+    sum : function(){
+        var res = 10 + 20
+        console.log(res);
+        console.log(this);
+
+        function child(){
+            var name = "Sham"
+            console.log(name);
+            console.log(this);
+        }
+        child()
+    }
+}
+
+student.sum();
