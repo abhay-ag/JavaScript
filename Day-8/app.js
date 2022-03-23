@@ -10,3 +10,26 @@ function whoAmI(){
 }
 
 whoAmI()
+
+/*
+    Hoisting order:
+
+        var data = undefined
+        console.log("i am a ", data)
+        data = teacher
+        console.log("i am a ", data)
+
+        function whoAmI(){
+            var data = undefined; //Function scoped variable
+            console.log("i am a ", data)
+            data = "Computer";
+            console.log("i am a ", data)
+        }
+
+    OUTPUT:
+
+        undefined
+        Teacher
+        undefined
+        Computer
+ */
