@@ -64,6 +64,6 @@ function first(){
 }
 function three(){
     var data4 = "of Group-01";
-    console.log(data1+ " " + data2 + " " + data3 + " " + data4);        // This line of code will show error as data2 and data3 are local variables of first() and second();
+    // console.log(data1+ " " + data2 + " " + data3 + " " + data4);        // This line of code will show error as data2 and data3 are local variables of first() and second();
 }
 first()
