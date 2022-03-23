@@ -49,3 +49,20 @@ function first(){
 first();
 
 //Child function can access the global variable and variables of its parent function but this is not true vice-versa
+
+// Another Example
+
+var data1 = "Hello students"
+function first(){
+    var data2 = "How are you?"
+    second();
+    function second(){
+        var data3 = "Let's Understand scope chain"
+        console.log(data1+ " " + data2 + " " + data3);
+        three();
+    }
+}
+function three(){
+    var data4 = "of Group-01";
+    console.log(data1+ " " + data2 + " " + data3 + " " + data4);        // This line of code will show error as data2 and data3 are local variables of first() and second();
+}
