@@ -88,7 +88,7 @@ students.sum();
         1. In the illustration above this keyword refers to the owner object that is students. Therefore it will display
         the student object.
         2. In a Regular function like the illustration below this keyword will refer to the global object that is window object
-        3. In a function in STRICT MODE thi keyword will refer as UNDEFINED.
+        3. In a function in STRICT MODE this keyword will refer as UNDEFINED.
 */
 
 function sum1(){
@@ -97,3 +97,11 @@ function sum1(){
     console.log(this);          //Declared in global scope so refers to the window object
 }
 sum1()
+
+function sum2(){
+    "use strict"
+    var res = 10+30
+    console.log(res);
+    console.log(this);
+}
+sum2();
