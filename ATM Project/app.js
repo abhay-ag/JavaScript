@@ -5,6 +5,9 @@ const loginText = document.querySelector('.form')
 const uName = document.querySelector('.user-id')
 const uPass = document.querySelector('.user-pass')
 
+let userArray = [];
+let passArray = [];
+
 loginBtn.addEventListener('click', ()=>{
     slider.classList.remove('slider-rt')
     loginBtn.classList.remove('dark-bg')
@@ -23,10 +26,12 @@ const proceedBtn = document.querySelector('.proceed')
 
 proceedBtn.addEventListener('click', ()=>{
     if(uName.classList.contains('create') && uPass.classList.contains('create')){
-
+        if(uName.value !== '' || uPass.value !== ''){
+            userArray.push(uName.value)
+            passArray.push(uPass.value)
+        }
     }
     else{
-        
+
     }
 })
-
