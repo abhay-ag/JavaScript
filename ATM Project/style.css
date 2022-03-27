@@ -42,6 +42,7 @@
     text-transform: uppercase;
     color: #D0E1F9;
     padding: 0.5rem 0;
+    transition: background-color 150ms ease-out;
 }
 .slider{
     position: absolute;
@@ -55,4 +56,49 @@
 }
 .buttons .dark-bg{
     background-color: #1c263c;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height:18rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    position: relative;
+    background-color: #b5d4ff;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.user-id, .user-pass{
+    width: 60%;
+    background-color: rgba(0,0,0,0);
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #283655;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    padding: 0 1rem 0.5rem 1rem;
+    color: #1c263c;
+}
+.details{
+    width: 100%;
+}
+.details h3{
+    font-size: 2rem;
+    color: #1E1F26;
+}
+.proceed{
+    position: absolute;
+    right: 0.5rem;
+    outline: none;
+    border: none;
+    background-color: #283655;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    color: #D0E1F9;
 }
