@@ -83,6 +83,7 @@
     box-sizing: border-box;
     padding: 0 1rem 0.5rem 1rem;
     color: #1c263c;
+    transition: border-bottom 150ms ease-out;
 }
 .details{
     width: 100%;

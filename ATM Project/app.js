@@ -7,6 +7,11 @@ const uPass = document.querySelector('.user-pass')
 
 let userArray = [];
 let passArray = [];
+let balance = new Array(9999).fill(0);
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    createBtn.click()
+})
 
 loginBtn.addEventListener('click', ()=>{
     slider.classList.remove('slider-rt')
@@ -30,8 +35,38 @@ proceedBtn.addEventListener('click', ()=>{
             userArray.push(uName.value)
             passArray.push(uPass.value)
         }
+        else{
+            uName.style.cssText = 'border-bottom: 2px solid red;';
+            uPass.style.cssText = 'border-bottom: 2px solid red;';
+            setTimeout(() => {
+                uName.style.cssText = 'border-bottom: 2px solid #283655;';
+                uPass.style.cssText = 'border-bottom: 2px solid #283655;';
+            }, 1500);
+        }
     }
     else{
-
+        if(userArray.length === 0 || passArray.length === 0){
+            alert('We do not have accounts right now! Please register first!!')
+        }
+        else{
+            if(uName.value !== '' || uPass.value !== ''){
+                if(userArray.indexOf(uName.value) === -1){
+                    alert("No user found! Please register")
+                }
+                else{
+                    if(uPass.value === passArray[userArray.indexOf(uName.value)]){
+                        
+                    }
+                }
+            }
+            else{
+                uName.style.cssText = 'border-bottom: 2px solid red;';
+                uPass.style.cssText = 'border-bottom: 2px solid red;';
+                setTimeout(() => {
+                    uName.style.cssText = 'border-bottom: 2px solid #283655;';
+                    uPass.style.cssText = 'border-bottom: 2px solid #283655;';
+                }, 1500);
+            }
+        }
     }
 })
