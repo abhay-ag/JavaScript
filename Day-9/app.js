@@ -37,3 +37,9 @@ myCar.model = "Mustang";
 myCar.year = 1980;
 
 console.log(myCar);
+
+/* 
+    Explanation:
+        1. using new Object(); we create an instance of pre created object and dynamically allocates memory
+        2. Then we add properties using dot notation.
+*/
