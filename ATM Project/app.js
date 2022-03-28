@@ -60,10 +60,10 @@ proceedBtn.addEventListener('click', ()=>{
             if(uName.value !== '' || uPass.value !== ''){
                 if(userArray.indexOf(uName.value) === -1){
                     alertWindow.style.cssText = 'right: 0;'
-                alertWindow.textContent = "No Such User Exists! Please Register"
-                setTimeout(() => {
-                    alertWindow.style.cssText = 'right: -25rem;'
-                }, 2000);
+                    alertWindow.textContent = "No Such User Exists! Please Register"
+                    setTimeout(() => {
+                        alertWindow.style.cssText = 'right: -25rem;'
+                    }, 2000);
                 }
                 else{
                     if(uPass.value === passArray[userArray.indexOf(uName.value)]){
