@@ -102,4 +102,13 @@ class Car{
 }
 
 let myCar1  = new Car("Ford", 2014);        // Creating an instance of the car class and and object properties are set.
-console.log(myCar1.age());                  
+console.log("Car 1 age: "+myCar1.age());                  
+
+let myCar2 = new Car("Nissan", 1980);
+console.log("Car 2 age: "+myCar2.age());
+
+let myCar3 = new Car("BMW", 2020);
+console.log("Car 3 age: "+myCar3.age());
+
+let myCar4 = new Car("Subaru", 1980);
+console.log("Car 4 age: "+ myCar4.age());
