@@ -89,3 +89,17 @@ let Rect1 = class Rect2{
 }
 
 console.log(Rect1.name);
+
+class Car{
+    constructor(name, year){
+        this.name - name
+        this.year = year
+    }
+    age(){
+        let date = new Date();
+        return date.getFullYear() - this.year;
+    }
+}
+
+let myCar1  = new Car("Ford", 2014);        // Creating an instance of the car class and and object properties are set.
+console.log(myCar1.age());                  
