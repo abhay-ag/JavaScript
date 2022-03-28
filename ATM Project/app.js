@@ -34,6 +34,9 @@ proceedBtn.addEventListener('click', ()=>{
         if(uName.value !== '' || uPass.value !== ''){
             userArray.push(uName.value)
             passArray.push(uPass.value)
+
+            uName.value = ''
+            uPass.value = ''
         }
         else{
             uName.style.cssText = 'border-bottom: 2px solid red;';
@@ -55,9 +58,14 @@ proceedBtn.addEventListener('click', ()=>{
                 }
                 else{
                     if(uPass.value === passArray[userArray.indexOf(uName.value)]){
-                        
+                        alert("Login SuccessFull")
+                    }
+                    else{
+                        alert("Password Wrong")
                     }
                 }
+                uName.value = ''
+                uPass.value = ''
             }
             else{
                 uName.style.cssText = 'border-bottom: 2px solid red;';
