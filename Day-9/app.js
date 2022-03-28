@@ -52,6 +52,12 @@ console.log(myCar);
         2. First letter of the class name should be Capitalized.
 */
 
+/* 
+    Difference in between constructor and a function:
+        A function has to be called to run it but constructor automatically runs.
+        In order to execute a function it has to be called, however constructor calls itself automatically when an instance of the class is created.
+*/
+
 // Declaring a Class
 
 class Rectangle{
