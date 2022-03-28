@@ -11,6 +11,8 @@
         3. It's a standalone entity and it binds properties and has its type.
 */
 
+// First Type
+
 const std = {
     name: "Abhay",
     class:"BE",
@@ -20,3 +22,18 @@ const std = {
 }
 
 std.res();
+
+/* 
+    Accessing object properties:
+        1. using dot notation
+            eg: objectName.propertyName
+*/
+
+// Second Type
+
+const myCar = new Object();
+myCar.make = "Ford";
+myCar.model = "Mustang";
+myCar.year = 1980;
+
+console.log(myCar);
