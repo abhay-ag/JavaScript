@@ -10,3 +10,13 @@
                     }
         3. It's a standalone entity and it binds properties and has its type.
 */
+
+const std = {
+    name: "Abhay",
+    class:"BE",
+    res : function(){
+        console.log(this.class);
+    }
+}
+
+std.res();
