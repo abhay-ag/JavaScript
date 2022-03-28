@@ -4,6 +4,7 @@ const slider = document.querySelector('.slider')
 const loginText = document.querySelector('.form')
 const uName = document.querySelector('.user-id')
 const uPass = document.querySelector('.user-pass')
+const alertWindow = document.querySelector('.alert-window')
 
 let userArray = [];
 let passArray = [];
@@ -49,19 +50,35 @@ proceedBtn.addEventListener('click', ()=>{
     }
     else{
         if(userArray.length === 0 || passArray.length === 0){
-            alert('We do not have accounts right now! Please register first!!')
+            alertWindow.style.cssText = 'right: 0;'
+            alertWindow.textContent = "No Accounts! Please Register"
+            setTimeout(() => {
+                alertWindow.style.cssText = 'right: -25rem;'
+            }, 2000);
         }
         else{
             if(uName.value !== '' || uPass.value !== ''){
                 if(userArray.indexOf(uName.value) === -1){
-                    alert("No user found! Please register")
+                    alertWindow.style.cssText = 'right: 0;'
+                alertWindow.textContent = "No Such User Exists! Please Register"
+                setTimeout(() => {
+                    alertWindow.style.cssText = 'right: -25rem;'
+                }, 2000);
                 }
                 else{
                     if(uPass.value === passArray[userArray.indexOf(uName.value)]){
-                        alert("Login SuccessFull")
+                        alertWindow.style.cssText = 'right: 0;'
+                        alertWindow.textContent = "login successful"
+                        setTimeout(() => {
+                            alertWindow.style.cssText = 'right: -25rem;'
+                        }, 2000);
                     }
                     else{
-                        alert("Password Wrong")
+                        alertWindow.style.cssText = 'right: 0;'
+                        alertWindow.textContent = "Wrong Password"
+                        setTimeout(() => {
+                            alertWindow.style.cssText = 'right: -25rem;'
+                        }, 2000);
                     }
                 }
                 uName.value = ''
