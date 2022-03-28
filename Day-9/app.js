@@ -50,6 +50,7 @@ console.log(myCar);
     Classes:
         1. They are special function, has two components 'class expressions' and 'class declarations'.
         2. First letter of the class name should be Capitalized.
+        3. Classes are NOT HOISTED.
 */
 
 /* 
@@ -66,3 +67,25 @@ class Rectangle{
         this.width = breadth
     }
 }
+
+// Declaring a class using expressions
+
+// UnNamed
+let Rect = class{
+    constructor(height, width){
+        this.height = height;
+        this.width = width;
+    }
+}
+console.log(Rect.name);
+
+// Named
+
+let Rect1 = class Rect2{
+    constructor(height, width){
+        this.height = height;
+        this.width = width;
+    }
+}
+
+console.log(Rect1.name);
