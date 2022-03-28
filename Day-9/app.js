@@ -43,3 +43,20 @@ console.log(myCar);
         1. using new Object(); we create an instance of pre created object and dynamically allocates memory
         2. Then we add properties using dot notation.
 */
+
+// Third Type --> Using Classes
+
+/* 
+    Classes:
+        1. They are special function, has two components 'class expressions' and 'class declarations'.
+        2. First letter of the class name should be Capitalized.
+*/
+
+// Declaring a Class
+
+class Rectangle{
+    constructor (height, breadth){
+        this.height = height;
+        this.width = breadth
+    }
+}
