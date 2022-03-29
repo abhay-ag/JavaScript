@@ -186,3 +186,16 @@ body{
 .big-font{
     font-size: 2.5rem;
 }
+.modal-proceed-btn{
+    outline: none;
+    border: none;
+    padding: 1rem 2rem;
+    color: #b5d4ff;
+    background-color: #1c263c;
+    border-radius: 7px;
+    position: absolute;
+    bottom: 7rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1.5rem;
+}

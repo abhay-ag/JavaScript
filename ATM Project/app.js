@@ -76,20 +76,21 @@ proceedBtn.addEventListener('click', ()=>{
                         }, 2000);
                         currUser = uName.value;
                         modalWindow.innerHTML = `<div class="login-container">
-                        <h1 class="greet">Welcome, </h1>
-                        <div class="buttons">
-                        <button class="withdraw">Withdraw</button>
-                        <button class="deposit dark-bg">Deposit</button>
-                        <button class="balance dark-bg">Balance</button>
-                        <div class="slider-sm"></div>
-                        </div>
-                        <div class="form">
-                        <div class="details-money">
-                        <h3 class = "bank-enq big-font">Enter amount to be withdrawn</h3><input type="text" class="user-id user-balance">
-                        </div>
-                        </div>
-                        <button class="close-btn">X</button>
-                        </div>`
+                                                    <h1 class="greet">Welcome, </h1>
+                                                    <div class="buttons">
+                                                    <button class="withdraw">Withdraw</button>
+                                                    <button class="deposit dark-bg">Deposit</button>
+                                                    <button class="balance dark-bg">Balance</button>
+                                                    <div class="slider-sm"></div>
+                                                    </div>
+                                                    <div class="form">
+                                                    <div class="details-money">
+                                                    <h3 class = "bank-enq big-font">Enter amount to be withdrawn</h3><input type="text" class="user-id user-balance with-money">
+                                                    </div>
+                                                    </div>
+                                                    <button class="close-btn">X</button>
+                                                    <button class = "modal-proceed-btn">Proceed</button>
+                                                </div>`
                         setTimeout(() => {
                             modalWindow.classList.add('modal-open')
                         }, 2000);
@@ -102,13 +103,17 @@ proceedBtn.addEventListener('click', ()=>{
                         const withBtn = document.querySelector('.withdraw')
                         const depBtn = document.querySelector('.deposit')
                         const sliderSm = document.querySelector('.slider-sm')
+                        const modProceedBtn = document.querySelector('.modal-proceed-btn')
                         
                         withBtn.addEventListener('click', ()=>{
                             sliderSm.classList.remove('slider-sm-slide')
                             sliderSm.classList.remove('slider-sm-slide-full')
-                            withBtn.classList.add('dark-bg')
+                            balBtn.classList.add('dark-bg')
                             depBtn.classList.add('dark-bg')
                             withBtn.classList.remove('dark-bg')
+                            userBal.classList.remove('dep-money')
+                            userBal.classList.add('with-money')
+                            modProceedBtn.style.cssText = 'display: block';
                             bankEnq.textContent = "Enter amount to be withdrawn:"
                             userBal.style.cssText = "display: block;"
                         })
@@ -120,7 +125,10 @@ proceedBtn.addEventListener('click', ()=>{
                             balBtn.classList.add('dark-bg')
                             depBtn.classList.remove('dark-bg')
                             bankEnq.textContent = "Enter amount to be deposited:"
+                            modProceedBtn.style.cssText = 'display: block';
                             userBal.style.cssText = "display: block;"
+                            userBal.classList.remove('with-money')
+                            userBal.classList.add('dep-money')
                         })
                         
                         balBtn.addEventListener('click', ()=>{
@@ -129,10 +137,49 @@ proceedBtn.addEventListener('click', ()=>{
                             depBtn.classList.add('dark-bg')
                             withBtn.classList.add('dark-bg')
                             balBtn.classList.remove('dark-bg')
-                            bankEnq.textContent = "Balance of " + currUser + " is: " + balance[userArray.indexOf(currUser)]
+                            userBal.classList.remove('dep-money')
+                            modProceedBtn.style.cssText = 'display: none';
+                            bankEnq.textContent = "Balance of " + currUser + " is: $" + balance[userArray.indexOf(currUser)]
                             userBal.style.cssText = "display: none;"
                         })
                         
+                        modProceedBtn.addEventListener('click', ()=>{
+                            if (userBal.classList.contains('with-money')){
+                                if(balance[userArray.indexOf(currUser)] ===  0){
+                                    alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                    alertWindow.textContent = "You have 0 Balance! Please Deposit First"
+                                    setTimeout(() => {
+                                        alertWindow.style.cssText = 'right: -25rem;'
+                                    }, 2000);
+                                    userBal.value = ''
+                                }else{
+                                    if(!(userBal.value > balance[userArray.indexOf(currUser)])){
+                                        balance[userArray.indexOf(currUser)] -= parseInt(userBal.value)
+                                        alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                        alertWindow.textContent = "Succesfully withdrew $" + userBal.value
+                                        setTimeout(() => {
+                                            alertWindow.style.cssText = 'right: -25rem;'
+                                        }, 2000);
+                                        userBal.value = ''
+                                    }else{
+                                        alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                        alertWindow.textContent = "You have insufficient Balance!"
+                                        setTimeout(() => {
+                                            alertWindow.style.cssText = 'right: -25rem;'
+                                        }, 2000);
+                                        userBal.value = ''
+                                    }
+                                }
+                            }else if(userBal.classList.contains('dep-money')){
+                                balance[userArray.indexOf(currUser)] += parseInt(userBal.value)
+                                alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                alertWindow.textContent = "Succesfully deposited $" + userBal.value
+                                setTimeout(() => {
+                                    alertWindow.style.cssText = 'right: -25rem;'
+                                }, 2000)
+                                userBal.value = ''
+                            }
+                        })
                         
                         xButton.addEventListener('click', ()=>{
                             modalWindow.classList.remove('modal-open')
