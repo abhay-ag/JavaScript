@@ -7,6 +7,7 @@ const uPass = document.querySelector('.user-pass')
 const alertWindow = document.querySelector('.alert-window')
 const modalWindow = document.querySelector('.modal-window')
 let currUser  = ""
+let invalid = 0;
 
 let userArray = [];
 let passArray = [];
@@ -142,6 +143,10 @@ proceedBtn.addEventListener('click', ()=>{
                             bankEnq.textContent = "Balance of " + currUser + " is: $" + balance[userArray.indexOf(currUser)]
                             userBal.style.cssText = "display: none;"
                         })
+
+                        xButton.addEventListener('click', ()=>{
+                            modalWindow.classList.remove('modal-open')
+                        })
                         
                         modProceedBtn.addEventListener('click', ()=>{
                             if (userBal.classList.contains('with-money')){
@@ -162,12 +167,21 @@ proceedBtn.addEventListener('click', ()=>{
                                         }, 2000);
                                         userBal.value = ''
                                     }else{
+                                        invalid +=1
                                         alertWindow.style.cssText = 'right: 0;z-index: 99999'
                                         alertWindow.textContent = "You have insufficient Balance!"
                                         setTimeout(() => {
                                             alertWindow.style.cssText = 'right: -25rem;'
                                         }, 2000);
                                         userBal.value = ''
+                                        if(invalid == 4){
+                                            xButton.click()
+                                            alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                            alertWindow.textContent = "Invalid input Recieved too many times!"
+                                            setTimeout(() => {
+                                                alertWindow.style.cssText = 'right: -25rem;'
+                                            }, 2000);
+                                        }
                                     }
                                 }
                             }else if(userBal.classList.contains('dep-money')){
@@ -179,10 +193,6 @@ proceedBtn.addEventListener('click', ()=>{
                                 }, 2000)
                                 userBal.value = ''
                             }
-                        })
-                        
-                        xButton.addEventListener('click', ()=>{
-                            modalWindow.classList.remove('modal-open')
                         })
                         
                     }
