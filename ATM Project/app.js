@@ -6,23 +6,11 @@ const uName = document.querySelector('.user-id')
 const uPass = document.querySelector('.user-pass')
 const alertWindow = document.querySelector('.alert-window')
 const modalWindow = document.querySelector('.modal-window')
-const xButton = document.querySelector('.close-btn')
-const greet = document.querySelector('.greet')
-const bankEnq = document.querySelector('.bank-enq')
-const userBal = document.querySelector('.user-balance')
-const balBtn = document.querySelector('.balance')
-const withBtn = document.querySelector('.withdraw')
-const depBtn = document.querySelector('.deposit')
-const sliderSm = document.querySelector('.slider-sm')
 let currUser  = ""
 
 let userArray = [];
 let passArray = [];
 let balance = new Array(9999).fill(0);
-
-function greeting(uname){
-    greet.textContent += " "+uname;
-}
 
 document.addEventListener('DOMContentLoaded', ()=>{
     createBtn.click()
@@ -49,7 +37,7 @@ proceedBtn.addEventListener('click', ()=>{
         if(uName.value !== '' && uPass.value !== ''){
             userArray.push(uName.value)
             passArray.push(uPass.value)
-
+            
             uName.value = ''
             uPass.value = ''
         }
@@ -85,10 +73,71 @@ proceedBtn.addEventListener('click', ()=>{
                         alertWindow.textContent = "login successful"
                         setTimeout(() => {
                             alertWindow.style.cssText = 'right: -25rem;'
+                        }, 2000);
+                        currUser = uName.value;
+                        modalWindow.innerHTML = `<div class="login-container">
+                        <h1 class="greet">Welcome, </h1>
+                        <div class="buttons">
+                        <button class="withdraw">Withdraw</button>
+                        <button class="deposit dark-bg">Deposit</button>
+                        <button class="balance dark-bg">Balance</button>
+                        <div class="slider-sm"></div>
+                        </div>
+                        <div class="form">
+                        <div class="details-money">
+                        <h3 class = "bank-enq big-font">Enter amount to be withdrawn</h3><input type="text" class="user-id user-balance">
+                        </div>
+                        </div>
+                        <button class="close-btn">X</button>
+                        </div>`
+                        setTimeout(() => {
                             modalWindow.classList.add('modal-open')
                         }, 2000);
-                        greeting(uName.value);
-                        currUser = uName.value;
+                        const xButton = document.querySelector('.close-btn')
+                        const greet = document.querySelector('.greet')
+                        greet.textContent += " " + uName.value
+                        const bankEnq = document.querySelector('.bank-enq')
+                        const userBal = document.querySelector('.user-balance')
+                        const balBtn = document.querySelector('.balance')
+                        const withBtn = document.querySelector('.withdraw')
+                        const depBtn = document.querySelector('.deposit')
+                        const sliderSm = document.querySelector('.slider-sm')
+                        
+                        withBtn.addEventListener('click', ()=>{
+                            sliderSm.classList.remove('slider-sm-slide')
+                            sliderSm.classList.remove('slider-sm-slide-full')
+                            withBtn.classList.add('dark-bg')
+                            depBtn.classList.add('dark-bg')
+                            withBtn.classList.remove('dark-bg')
+                            bankEnq.textContent = "Enter amount to be withdrawn:"
+                            userBal.style.cssText = "display: block;"
+                        })
+                        
+                        depBtn.addEventListener('click', ()=>{
+                            sliderSm.classList.add('slider-sm-slide')
+                            sliderSm.classList.remove('slider-sm-slide-full')
+                            withBtn.classList.add('dark-bg')
+                            balBtn.classList.add('dark-bg')
+                            depBtn.classList.remove('dark-bg')
+                            bankEnq.textContent = "Enter amount to be deposited:"
+                            userBal.style.cssText = "display: block;"
+                        })
+                        
+                        balBtn.addEventListener('click', ()=>{
+                            sliderSm.classList.remove('slider-sm-slide')
+                            sliderSm.classList.add('slider-sm-slide-full')
+                            depBtn.classList.add('dark-bg')
+                            withBtn.classList.add('dark-bg')
+                            balBtn.classList.remove('dark-bg')
+                            bankEnq.textContent = "Balance of " + currUser + " is: " + balance[userArray.indexOf(currUser)]
+                            userBal.style.cssText = "display: none;"
+                        })
+                        
+                        
+                        xButton.addEventListener('click', ()=>{
+                            modalWindow.classList.remove('modal-open')
+                        })
+                        
                     }
                     else{
                         alertWindow.style.cssText = 'right: 0;'
@@ -111,39 +160,4 @@ proceedBtn.addEventListener('click', ()=>{
             }
         }
     }
-})
-
-withBtn.addEventListener('click', ()=>{
-    sliderSm.classList.remove('slider-sm-slide')
-    sliderSm.classList.remove('slider-sm-slide-full')
-    withBtn.classList.add('dark-bg')
-    depBtn.classList.add('dark-bg')
-    withBtn.classList.remove('dark-bg')
-    bankEnq.textContent = "Enter amount to be withdrawn:"
-    userBal.style.cssText = "display: block;"
-})
-
-depBtn.addEventListener('click', ()=>{
-    sliderSm.classList.add('slider-sm-slide')
-    sliderSm.classList.remove('slider-sm-slide-full')
-    withBtn.classList.add('dark-bg')
-    balBtn.classList.add('dark-bg')
-    depBtn.classList.remove('dark-bg')
-    bankEnq.textContent = "Enter amount to be deposited:"
-    userBal.style.cssText = "display: block;"
-})
-
-balBtn.addEventListener('click', ()=>{
-    sliderSm.classList.remove('slider-sm-slide')
-    sliderSm.classList.add('slider-sm-slide-full')
-    depBtn.classList.add('dark-bg')
-    withBtn.classList.add('dark-bg')
-    balBtn.classList.remove('dark-bg')
-    bankEnq.textContent = "Balance of " + currUser + " is: " + balance[userArray.indexOf(currUser)]
-    userBal.style.cssText = "display: none;"
-})
-
-
-xButton.addEventListener('click', ()=>{
-    modalWindow.classList.remove('modal-open')
 })
