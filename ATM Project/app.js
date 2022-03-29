@@ -36,8 +36,21 @@ const proceedBtn = document.querySelector('.proceed')
 proceedBtn.addEventListener('click', ()=>{
     if(uName.classList.contains('create') && uPass.classList.contains('create')){
         if(uName.value !== '' && uPass.value !== ''){
-            userArray.push(uName.value)
-            passArray.push(uPass.value)
+            if(userArray.indexOf(uName.value) === -1){
+                userArray.push(uName.value)
+                passArray.push(uPass.value)
+                alertWindow.style.cssText = 'right: 0;'
+                alertWindow.textContent = "Registration Successful!"
+                setTimeout(() => {
+                    alertWindow.style.cssText = 'right: -25rem;'
+                }, 2000);
+            }else{
+                alertWindow.style.cssText = 'right: 0;'
+                alertWindow.textContent = "Sorry! Username taken!!"
+                setTimeout(() => {
+                    alertWindow.style.cssText = 'right: -25rem;'
+                }, 2000);
+            }
             
             uName.value = ''
             uPass.value = ''
