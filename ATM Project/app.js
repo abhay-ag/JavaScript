@@ -14,6 +14,7 @@ const balBtn = document.querySelector('.balance')
 const withBtn = document.querySelector('.withdraw')
 const depBtn = document.querySelector('.deposit')
 const sliderSm = document.querySelector('.slider-sm')
+let currUser  = ""
 
 let userArray = [];
 let passArray = [];
@@ -87,6 +88,7 @@ proceedBtn.addEventListener('click', ()=>{
                             modalWindow.classList.add('modal-open')
                         }, 2000);
                         greeting(uName.value);
+                        currUser = uName.value;
                     }
                     else{
                         alertWindow.style.cssText = 'right: 0;'
@@ -117,6 +119,8 @@ withBtn.addEventListener('click', ()=>{
     withBtn.classList.add('dark-bg')
     depBtn.classList.add('dark-bg')
     withBtn.classList.remove('dark-bg')
+    bankEnq.textContent = "Enter amount to be withdrawn:"
+    userBal.style.cssText = "display: block;"
 })
 
 depBtn.addEventListener('click', ()=>{
@@ -125,6 +129,8 @@ depBtn.addEventListener('click', ()=>{
     withBtn.classList.add('dark-bg')
     balBtn.classList.add('dark-bg')
     depBtn.classList.remove('dark-bg')
+    bankEnq.textContent = "Enter amount to be deposited:"
+    userBal.style.cssText = "display: block;"
 })
 
 balBtn.addEventListener('click', ()=>{
@@ -133,6 +139,8 @@ balBtn.addEventListener('click', ()=>{
     depBtn.classList.add('dark-bg')
     withBtn.classList.add('dark-bg')
     balBtn.classList.remove('dark-bg')
+    bankEnq.textContent = "Balance of " + currUser + " is: " + balance[userArray.indexOf(currUser)]
+    userBal.style.cssText = "display: none;"
 })
 
 
