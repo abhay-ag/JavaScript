@@ -7,10 +7,15 @@ const uPass = document.querySelector('.user-pass')
 const alertWindow = document.querySelector('.alert-window')
 const modalWindow = document.querySelector('.modal-window')
 const xButton = document.querySelector('.close-btn')
+const greet = document.querySelector('.greet')
 
 let userArray = [];
 let passArray = [];
 let balance = new Array(9999).fill(0);
+
+function greeting(uname){
+    greet.textContent += " "+uname;
+}
 
 document.addEventListener('DOMContentLoaded', ()=>{
     createBtn.click()
@@ -75,6 +80,7 @@ proceedBtn.addEventListener('click', ()=>{
                             alertWindow.style.cssText = 'right: -25rem;'
                             modalWindow.classList.add('modal-open')
                         }, 2000);
+                        greeting(uName.value);
                     }
                     else{
                         alertWindow.style.cssText = 'right: 0;'

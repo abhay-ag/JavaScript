@@ -158,6 +158,9 @@ body{
     border-radius: 10px;
     flex-direction: column;
 }
+.login-container .greet{
+    color: #D0E1F9;
+}
 .close-btn{
     position: absolute;
     color: #D0E1F9;
