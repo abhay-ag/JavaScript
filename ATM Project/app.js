@@ -5,6 +5,8 @@ const loginText = document.querySelector('.form')
 const uName = document.querySelector('.user-id')
 const uPass = document.querySelector('.user-pass')
 const alertWindow = document.querySelector('.alert-window')
+const modalWindow = document.querySelector('.modal-window')
+const xButton = document.querySelector('.close-btn')
 
 let userArray = [];
 let passArray = [];
@@ -32,7 +34,7 @@ const proceedBtn = document.querySelector('.proceed')
 
 proceedBtn.addEventListener('click', ()=>{
     if(uName.classList.contains('create') && uPass.classList.contains('create')){
-        if(uName.value !== '' || uPass.value !== ''){
+        if(uName.value !== '' && uPass.value !== ''){
             userArray.push(uName.value)
             passArray.push(uPass.value)
 
@@ -49,7 +51,7 @@ proceedBtn.addEventListener('click', ()=>{
         }
     }
     else{
-        if(userArray.length === 0 || passArray.length === 0){
+        if(userArray.length === 0 && passArray.length === 0){
             alertWindow.style.cssText = 'right: 0;'
             alertWindow.textContent = "No Accounts! Please Register"
             setTimeout(() => {
@@ -57,7 +59,7 @@ proceedBtn.addEventListener('click', ()=>{
             }, 2000);
         }
         else{
-            if(uName.value !== '' || uPass.value !== ''){
+            if(uName.value !== '' && uPass.value !== ''){
                 if(userArray.indexOf(uName.value) === -1){
                     alertWindow.style.cssText = 'right: 0;'
                     alertWindow.textContent = "No Such User Exists! Please Register"
@@ -71,6 +73,7 @@ proceedBtn.addEventListener('click', ()=>{
                         alertWindow.textContent = "login successful"
                         setTimeout(() => {
                             alertWindow.style.cssText = 'right: -25rem;'
+                            modalWindow.classList.add('modal-open')
                         }, 2000);
                     }
                     else{
@@ -94,4 +97,8 @@ proceedBtn.addEventListener('click', ()=>{
             }
         }
     }
+})
+
+xButton.addEventListener('click', ()=>{
+    modalWindow.classList.remove('modal-open')
 })
