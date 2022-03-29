@@ -9,8 +9,8 @@ const modalWindow = document.querySelector('.modal-window')
 let currUser  = ""
 let invalid = 0;
 
-let userArray = [];
-let passArray = [];
+let userArray = ['admin'];
+let passArray = ['admin'];
 let balance = new Array(9999).fill(0);
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -172,12 +172,20 @@ proceedBtn.addEventListener('click', ()=>{
                                     userBal.value = ''
                                 }else{
                                     if(!(userBal.value > balance[userArray.indexOf(currUser)])){
-                                        balance[userArray.indexOf(currUser)] -= parseInt(userBal.value)
-                                        alertWindow.style.cssText = 'right: 0;z-index: 99999'
-                                        alertWindow.textContent = "Succesfully withdrew $" + userBal.value
-                                        setTimeout(() => {
-                                            alertWindow.style.cssText = 'right: -25rem;'
-                                        }, 2000);
+                                        if(parseInt(userBal.value)){
+                                            balance[userArray.indexOf(currUser)] -= parseInt(userBal.value)
+                                            alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                            alertWindow.textContent = "Succesfully withdrew $" + userBal.value
+                                            setTimeout(() => {
+                                                alertWindow.style.cssText = 'right: -25rem;'
+                                            }, 2000);
+                                        }else{
+                                            alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                            alertWindow.textContent = "Error! Please enter a number" + userBal.value
+                                            setTimeout(() => {
+                                                alertWindow.style.cssText = 'right: -25rem;'
+                                            }, 2000);
+                                        }
                                         userBal.value = ''
                                     }else{
                                         invalid +=1
@@ -198,7 +206,20 @@ proceedBtn.addEventListener('click', ()=>{
                                     }
                                 }
                             }else if(userBal.classList.contains('dep-money')){
-                                balance[userArray.indexOf(currUser)] += parseInt(userBal.value)
+                                if(parseInt(userBal.value)){
+                                    balance[userArray.indexOf(currUser)] += parseInt(userBal.value)
+                                    alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                    alertWindow.textContent = "Succesfully deposited $" + userBal.value
+                                    setTimeout(() => {
+                                        alertWindow.style.cssText = 'right: -25rem;'
+                                    }, 2000);
+                                }else{
+                                    alertWindow.style.cssText = 'right: 0;z-index: 99999'
+                                    alertWindow.textContent = "Error! Please enter a number" + userBal.value
+                                    setTimeout(() => {
+                                        alertWindow.style.cssText = 'right: -25rem;'
+                                    }, 2000);
+                                }
                                 alertWindow.style.cssText = 'right: 0;z-index: 99999'
                                 alertWindow.textContent = "Succesfully deposited $" + userBal.value
                                 setTimeout(() => {
