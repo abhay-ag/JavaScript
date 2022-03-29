@@ -8,6 +8,12 @@ const alertWindow = document.querySelector('.alert-window')
 const modalWindow = document.querySelector('.modal-window')
 const xButton = document.querySelector('.close-btn')
 const greet = document.querySelector('.greet')
+const bankEnq = document.querySelector('.bank-enq')
+const userBal = document.querySelector('.user-balance')
+const balBtn = document.querySelector('.balance')
+const withBtn = document.querySelector('.withdraw')
+const depBtn = document.querySelector('.deposit')
+const sliderSm = document.querySelector('.slider-sm')
 
 let userArray = [];
 let passArray = [];
@@ -104,6 +110,31 @@ proceedBtn.addEventListener('click', ()=>{
         }
     }
 })
+
+withBtn.addEventListener('click', ()=>{
+    sliderSm.classList.remove('slider-sm-slide')
+    sliderSm.classList.remove('slider-sm-slide-full')
+    withBtn.classList.add('dark-bg')
+    depBtn.classList.add('dark-bg')
+    withBtn.classList.remove('dark-bg')
+})
+
+depBtn.addEventListener('click', ()=>{
+    sliderSm.classList.add('slider-sm-slide')
+    sliderSm.classList.remove('slider-sm-slide-full')
+    withBtn.classList.add('dark-bg')
+    balBtn.classList.add('dark-bg')
+    depBtn.classList.remove('dark-bg')
+})
+
+balBtn.addEventListener('click', ()=>{
+    sliderSm.classList.remove('slider-sm-slide')
+    sliderSm.classList.add('slider-sm-slide-full')
+    depBtn.classList.add('dark-bg')
+    withBtn.classList.add('dark-bg')
+    balBtn.classList.remove('dark-bg')
+})
+
 
 xButton.addEventListener('click', ()=>{
     modalWindow.classList.remove('modal-open')
