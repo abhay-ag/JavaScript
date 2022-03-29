@@ -9,8 +9,8 @@ const modalWindow = document.querySelector('.modal-window')
 let currUser  = ""
 let invalid = 0;
 
-let userArray = ['admin'];
-let passArray = ['admin'];
+let userArray = [];
+let passArray = [];
 let balance = new Array(9999).fill(0);
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -220,11 +220,6 @@ proceedBtn.addEventListener('click', ()=>{
                                         alertWindow.style.cssText = 'right: -25rem;'
                                     }, 2000);
                                 }
-                                alertWindow.style.cssText = 'right: 0;z-index: 99999'
-                                alertWindow.textContent = "Succesfully deposited $" + userBal.value
-                                setTimeout(() => {
-                                    alertWindow.style.cssText = 'right: -25rem;'
-                                }, 2000)
                                 userBal.value = ''
                             }
                         })
