@@ -13,6 +13,20 @@ let userArray = [];
 let passArray = [];
 let balance = new Array(9999).fill(0);
 
+let storedUsers = JSON.parse(localStorage.getItem("users"))
+let storedPass = JSON.parse(localStorage.getItem("pass"))
+let storedBalance = JSON.parse(localStorage.getItem("balance"))
+
+if(storedUsers){
+    userArray = storedUsers
+}
+if(storedPass){
+    passArray = storedPass
+}
+if(storedBalance){
+    balance = storedBalance
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     createBtn.click()
 })
@@ -39,6 +53,8 @@ proceedBtn.addEventListener('click', ()=>{
             if(userArray.indexOf(uName.value) === -1){
                 userArray.push(uName.value)
                 passArray.push(uPass.value)
+                localStorage.setItem("users", JSON.stringify(userArray))
+                localStorage.setItem("pass", JSON.stringify(passArray))
                 alertWindow.style.cssText = 'right: 0;'
                 alertWindow.textContent = "Registration Successful!"
                 setTimeout(() => {
@@ -174,6 +190,7 @@ proceedBtn.addEventListener('click', ()=>{
                                     if(!(userBal.value > balance[userArray.indexOf(currUser)])){
                                         if(parseInt(userBal.value)){
                                             balance[userArray.indexOf(currUser)] -= parseInt(userBal.value)
+                                            localStorage.setItem("balance", JSON.stringify(balance))
                                             alertWindow.style.cssText = 'right: 0;z-index: 99999'
                                             alertWindow.textContent = "Succesfully withdrew $" + userBal.value
                                             setTimeout(() => {
@@ -208,6 +225,7 @@ proceedBtn.addEventListener('click', ()=>{
                             }else if(userBal.classList.contains('dep-money')){
                                 if(parseInt(userBal.value)){
                                     balance[userArray.indexOf(currUser)] += parseInt(userBal.value)
+                                    localStorage.setItem("balance", JSON.stringify(balance))
                                     alertWindow.style.cssText = 'right: 0;z-index: 99999'
                                     alertWindow.textContent = "Succesfully deposited $" + userBal.value
                                     setTimeout(() => {
