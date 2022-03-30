@@ -68,11 +68,6 @@ class CheckNosObjects{
 let ob1 =new CheckNosObjects();
 let ob2 =new CheckNosObjects();
 let ob3 =new CheckNosObjects();
-let ob4 =new CheckNosObjects();
-let ob5 =new CheckNosObjects();
-let ob6 =new CheckNosObjects();
-let ob7 =new CheckNosObjects();
-let ob8 =new CheckNosObjects();
 
 CheckNosObjects.count()
 
