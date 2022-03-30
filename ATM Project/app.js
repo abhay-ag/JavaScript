@@ -198,7 +198,7 @@ proceedBtn.addEventListener('click', ()=>{
                                             }, 2000);
                                         }else{
                                             alertWindow.style.cssText = 'right: 0;z-index: 99999'
-                                            alertWindow.textContent = "Error! Please enter a number" + userBal.value
+                                            alertWindow.textContent = "Error! Please enter a number"
                                             setTimeout(() => {
                                                 alertWindow.style.cssText = 'right: -25rem;'
                                             }, 2000);
@@ -233,7 +233,7 @@ proceedBtn.addEventListener('click', ()=>{
                                     }, 2000);
                                 }else{
                                     alertWindow.style.cssText = 'right: 0;z-index: 99999'
-                                    alertWindow.textContent = "Error! Please enter a number" + userBal.value
+                                    alertWindow.textContent = "Error! Please enter a number"
                                     setTimeout(() => {
                                         alertWindow.style.cssText = 'right: -25rem;'
                                     }, 2000);
