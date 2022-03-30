@@ -32,4 +32,22 @@ console.log("My car is " + myCar.age() + " years old.");
         1. Memory not allocated again and again; have a common memory
         2. Static can be a property and a method.
         3. Static properties are useful for making caches and other data that is not repeated for other instances
+        4. They can't be called from the instance name like other functions rather it is called by the class name
 */
+
+class Point{
+    constructor(x, y){
+        this.x = x; this.y = y;
+    }
+    static dispName = "Point"
+    static distance(a,b){
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.hypot(dx,dy)
+    }
+}
+const p1 = new Point(3,2);
+const p2 = new Point(6,6);
+console.log(p1.dispName);           // Return Undefined as the static can be called only using the Class name
+console.log(Point.dispName);
+console.log(Point.distance(p1, p2));
