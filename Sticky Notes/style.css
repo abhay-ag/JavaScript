@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Oswald:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    background-color: hsl(0, 0%, 18%);
+}
+.note-body{
+    height: 420px;
+    width: 420px;
+    transform: rotate(-4deg);
+    background-color: rgb(223, 255, 175);
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.note-body:nth-child(odd){
+    transform: rotate(3deg);
+}
+.head{
+    border-bottom: 2px solid #212121 !important;
+}
+.head,
+.note{
+    outline: none;
+    border: none;
+    font-family: 'oswald';
+    font-size: 2rem;
+    background-color: rgba(0,0,0,0);
+    resize: none;
+    height: 110px;
+}
+.note{
+    font-family: 'Grape Nuts';
+    height: 310px;
+    box-sizing: border-box;
+    padding: 10px 5px;
+}
+.add-note{
+    width: 420px;
+    height: 420px;
+    font-size: 3rem;
+    border-radius: 50px;
+    border: 15px dashed;
+    outline: none;
+    color: #4e4e4e;
+    background-color: rgba(0,0,0,0);
+    font-family: 'oswald';
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.add-note::first-letter{
+    font-size: 10rem;
+}
