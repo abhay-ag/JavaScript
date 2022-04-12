@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
 }
 body{
     overflow-x: hidden;
